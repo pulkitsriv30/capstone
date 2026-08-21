@@ -106,20 +106,21 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
                     when (motionEvent.action) {
                         MotionEvent.ACTION_DOWN -> {
                             if (!isProcessing) {
+                                // Stop any ongoing TTS before recording to avoid mic picking it up
+                                if (::textToSpeech.isInitialized) textToSpeech.stop()
                                 isRecording = true
                                 statusText = "Listening..."
                                 transcriptText = ""
                                 errorText = ""
-                                speakUiFeedback("Started listening")
                                 audioRecorder.startRecording()
                             }
                         }
                         MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                             if (isRecording) {
                                 isRecording = false
-                                statusText = "Analyzing..."
-                                speakUiFeedback("Stopped listening. Analyzing.")
                                 val audioFile = audioRecorder.stopRecording()
+                                statusText = "Analyzing..."
+                                speakUiFeedback("Analyzing")
                                 if (audioFile != null) {
                                     isProcessing = true
                                     processObjectSearch(audioFile, { query, response ->
@@ -213,10 +214,16 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
                     val q = apiResponse.userQuery ?: "Unknown"
                     val r = apiResponse.textResponse ?: "No text"
                     onSuccess(q, r)
-                    if (apiResponse.audioBytes != null) {
-                        audioPlayer.playAudio(apiResponse.audioBytes) {}
-                    } else {
-                        // ElevenLabs TTS failed — use Android native TTS
+                    // Play audio or speak via native TTS — wrapped in try-catch
+                    // so a playback failure doesn't show an error after a successful analysis
+                    try {
+                        if (apiResponse.audioBytes != null) {
+                            audioPlayer.playAudio(apiResponse.audioBytes) {}
+                        } else {
+                            speakUiFeedback(r)
+                        }
+                    } catch (playbackError: Exception) {
+                        // Fallback: if audio playback crashes, speak natively
                         speakUiFeedback(r)
                     }
                 }
@@ -243,9 +250,13 @@ class MainActivity : ComponentActivity(), TextToSpeech.OnInitListener {
                 } else {
                     val r = apiResponse.textResponse ?: "No text"
                     onSuccess(r)
-                    if (apiResponse.audioBytes != null) {
-                        audioPlayer.playAudio(apiResponse.audioBytes) {}
-                    } else {
+                    try {
+                        if (apiResponse.audioBytes != null) {
+                            audioPlayer.playAudio(apiResponse.audioBytes) {}
+                        } else {
+                            speakUiFeedback(r)
+                        }
+                    } catch (playbackError: Exception) {
                         speakUiFeedback(r)
                     }
                 }

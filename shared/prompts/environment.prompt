@@ -1,0 +1,1 @@
+Analyze the supplied camera frame for relevant environmental information. Prioritize obstacles, people, doors, stairs, furniture, and other navigation-relevant objects. Do not invent distances or claim certainty when confidence is low. Return structured JSON.

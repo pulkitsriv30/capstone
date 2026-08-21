@@ -1,0 +1,1 @@
+Find the requested object in the supplied camera frame. Return whether it is visible, its approximate horizontal/vertical position, a coarse distance category, confidence, and a suggested movement direction if it is not visible.

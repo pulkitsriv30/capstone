@@ -41,35 +41,48 @@ class AIOrchestratorService {
   }
 
   async processEnvironmentDescription(imageFile) {
+  try {
+    logger.info('Starting environment description');
+
+    // Step 1: Gemini Vision
+    const visionResult = await visionService.analyzeImage(
+      imageFile,
+      'Describe the immediate environment and any obstacles.'
+    );
+
+    logger.info('Environment vision analysis completed');
+
+    // Step 2: Navigation decision
+    const decision = navigationService.describeEnvironment(
+      visionResult
+    );
+
+    // Step 3: ElevenLabs TTS
+    let audioResponseBuffer = null;
+
     try {
-      // Step 1: Vision Analysis (with automatic model fallback)
-      const visionResult = await visionService.analyzeImage(imageFile, "Describe the immediate environment and any obstacles.");
-      
-      // Step 2: Navigation Decision (Environment)
-      const decision = navigationService.describeEnvironment(visionResult);
-
-      // Step 3: TTS — try ElevenLabs, fall back to text only
-      let audioResponseBuffer = null;
-      try {
-        audioResponseBuffer = await elevenlabsService.generateSpeech(decision.response);
-      } catch (ttsError) {
-        logger.warn('ElevenLabs TTS failed, returning text-only response', { error: ttsError.message });
-      }
-
-      return {
-        status: decision.status,
-        textResponse: decision.response,
-        audioBuffer: audioResponseBuffer
-      };
-
-    } catch (error) {
-      logger.error('Orchestrator Error (Environment)', { error: error.message });
-      throw error;
-    } finally {
-        if (imageFile && fs.existsSync(imageFile.path)) {
-            fs.unlinkSync(imageFile.path);
-        }
+      audioResponseBuffer = await elevenlabsService.generateSpeech(
+        decision.response
+      );
+    } catch (ttsError) {
+      logger.warn('ElevenLabs TTS failed', {
+        error: ttsError.message,
+      });
     }
+
+    return {
+      status: decision.status,
+      textResponse: decision.response,
+      audioBuffer: audioResponseBuffer,
+    };
+
+  } catch (error) {
+    logger.error('Orchestrator Error (Environment)', {
+      error: error.message,
+    });
+
+    throw error;
+  }
   }
 }
 

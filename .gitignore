@@ -4,6 +4,21 @@
 *.env
 !.env.example
 !.env*.example
+# Python virtual environments
+.venv/
+venv/
+**/.venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+*.mp3
+*.wav
+uploads/
 
 # Node.js
 node_modules/

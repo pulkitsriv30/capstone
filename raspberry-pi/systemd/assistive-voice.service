@@ -1,0 +1,17 @@
+[Unit]
+Description=AI Assistive Navigation Voice Service
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/capstone/raspberry-pi
+EnvironmentFile=/home/pi/capstone/raspberry-pi/.env
+ExecStart=/home/pi/capstone/raspberry-pi/.venv/bin/python /home/pi/capstone/raspberry-pi/main.py
+Restart=always
+RestartSec=3
+SupplementaryGroups=audio video
+
+[Install]
+WantedBy=multi-user.target

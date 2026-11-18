@@ -1,18 +1,37 @@
 const logger = require('../utils/logger');
 
 const MAX_SEARCH_ATTEMPTS = 6;
+const SESSION_TTL_MS = 10 * 60 * 1000; // 10 minutes session TTL
 
 class NavigationService {
   constructor() {
-    // In a real application, we might store this in a database or in-memory store like Redis.
-    // For this prototype, we'll use a simple in-memory map keyed by session/user ID.
     this.sessions = new Map();
   }
 
-  getSession(sessionId) {
-    if (!this.sessions.has(sessionId)) {
-      this.sessions.set(sessionId, { attempts: 0 });
+  // Prune sessions older than SESSION_TTL_MS to prevent unbounded memory growth
+  pruneExpiredSessions() {
+    const now = Date.now();
+    for (const [sessionId, session] of this.sessions.entries()) {
+      if (now - session.lastAccessedAt > SESSION_TTL_MS) {
+        this.sessions.delete(sessionId);
+      }
     }
+  }
+
+  getSession(sessionId) {
+    this.pruneExpiredSessions();
+
+    if (!this.sessions.has(sessionId)) {
+      this.sessions.set(sessionId, {
+        attempts: 0,
+        createdAt: Date.now(),
+        lastAccessedAt: Date.now(),
+      });
+    } else {
+      const session = this.sessions.get(sessionId);
+      session.lastAccessedAt = Date.now();
+    }
+
     return this.sessions.get(sessionId);
   }
 
@@ -26,9 +45,14 @@ class NavigationService {
 
     if (visionResult.found) {
       this.resetSession(sessionId);
+      const target = visionResult.target || 'target';
+      const isPlural = /s$/i.test(target);
+      const verb = isPlural ? 'are' : 'is';
+      const fallbackResponse = `Your ${target} ${verb} located ${visionResult.location || 'nearby'}.`;
+
       return {
         status: 'found',
-        response: visionResult.description || `Your ${visionResult.target} is located ${visionResult.location}.`
+        response: visionResult.description || fallbackResponse,
       };
     }
 
@@ -36,7 +60,7 @@ class NavigationService {
       this.resetSession(sessionId);
       return {
         status: 'limit_reached',
-        response: `I couldn't locate your ${visionResult.target}. Please try moving to another position.`
+        response: `I couldn't locate your ${visionResult.target || 'item'}. Please try moving to another position.`,
       };
     }
 
@@ -46,9 +70,9 @@ class NavigationService {
     if (!instruction) {
       // Default sweeping search pattern if vision AI doesn't suggest one
       if (session.attempts % 2 === 1) {
-        instruction = "Please turn slightly left.";
+        instruction = 'Please turn slightly left.';
       } else {
-        instruction = "Please turn slightly right.";
+        instruction = 'Please turn slightly right.';
       }
     } else {
       instruction = `Please turn ${instruction}.`;
@@ -56,15 +80,14 @@ class NavigationService {
 
     return {
       status: 'searching',
-      response: `I can't see your ${visionResult.target}. ${instruction}`
+      response: `I can't see your ${visionResult.target || 'item'}. ${instruction}`,
     };
   }
 
   describeEnvironment(visionResult) {
-    // Phase 12 logic - return the description from vision result
     return {
       status: 'environment_described',
-      response: visionResult.description || 'There is nothing of note nearby.'
+      response: visionResult.description || 'There is nothing of note nearby.',
     };
   }
 }

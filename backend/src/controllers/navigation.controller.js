@@ -1,38 +1,42 @@
 const aiOrchestratorService = require('../services/ai-orchestrator.service');
 const logger = require('../utils/logger');
+const response = require('../utils/response');
 
 const processNavigation = async (req, res, next) => {
   try {
     const { sessionId } = req.body;
-    if (!sessionId) {
-      return res.status(400).json({ success: false, message: 'sessionId is required' });
+    if (!sessionId || typeof sessionId !== 'string' || !sessionId.trim()) {
+      return response.error(res, 'sessionId is required', 400);
+    }
+
+    if (sessionId.trim().length > 128) {
+      return response.error(res, 'sessionId must not exceed 128 characters', 400);
     }
 
     const files = req.files;
     if (!files || !files.audio || !files.image) {
-      return res.status(400).json({ success: false, message: 'Both audio and image files are required' });
+      return response.error(res, 'Both audio and image files are required', 400);
     }
 
     const audioFile = files.audio[0];
     const imageFile = files.image[0];
 
-    const result = await aiOrchestratorService.processNavigationCommand(sessionId, audioFile, imageFile);
+    const result = await aiOrchestratorService.processNavigationCommand(sessionId.trim(), audioFile, imageFile);
 
     if (result.audioBuffer) {
-      // ElevenLabs TTS succeeded — send audio with headers
-      res.set('Content-Type', 'audio/mpeg');
-      res.set('X-Response-Text', encodeURIComponent(result.textResponse));
-      res.set('X-User-Query', encodeURIComponent(result.userQuery || ''));
-      res.set('X-Navigation-Status', result.status);
-      res.send(result.audioBuffer);
+      // ElevenLabs TTS succeeded — send audio with custom tracking headers
+      return response.audio(res, result.audioBuffer, {
+        'X-Response-Text': encodeURIComponent(result.textResponse),
+        'X-User-Query': encodeURIComponent(result.userQuery || ''),
+        'X-Navigation-Status': result.status,
+      });
     } else {
-      // TTS failed — send JSON so the app can use native TTS
-      res.json({
-        success: true,
+      // TTS failed — send JSON so the mobile app can fall back to native TTS
+      return response.success(res, {
         textResponse: result.textResponse,
         userQuery: result.userQuery,
         status: result.status,
-        audioAvailable: false
+        audioAvailable: false,
       });
     }
 
@@ -46,22 +50,21 @@ const processEnvironment = async (req, res, next) => {
   try {
     const file = req.file;
     if (!file) {
-      return res.status(400).json({ success: false, message: 'Image file is required' });
+      return response.error(res, 'Image file is required', 400);
     }
 
     const result = await aiOrchestratorService.processEnvironmentDescription(file);
 
     if (result.audioBuffer) {
-      res.set('Content-Type', 'audio/mpeg');
-      res.set('X-Response-Text', encodeURIComponent(result.textResponse));
-      res.set('X-Navigation-Status', result.status);
-      res.send(result.audioBuffer);
+      return response.audio(res, result.audioBuffer, {
+        'X-Response-Text': encodeURIComponent(result.textResponse),
+        'X-Navigation-Status': result.status,
+      });
     } else {
-      res.json({
-        success: true,
+      return response.success(res, {
         textResponse: result.textResponse,
         status: result.status,
-        audioAvailable: false
+        audioAvailable: false,
       });
     }
 
@@ -73,5 +76,5 @@ const processEnvironment = async (req, res, next) => {
 
 module.exports = {
   processNavigation,
-  processEnvironment
+  processEnvironment,
 };

@@ -12,8 +12,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 tunnel.log
-uploads/*
-!uploads/.gitkeep
+**/uploads/*
+!**/uploads/.gitkeep
 
 # Android & Gradle
 .gradle/

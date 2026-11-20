@@ -32,6 +32,12 @@ local.properties
 *.iml
 .navigation-cache/
 
+# Evaluation dataset images (too large for git — share separately)
+backend/evaluation/dataset/*.jpg
+backend/evaluation/dataset/*.jpeg
+backend/evaluation/dataset/*.png
+backend/evaluation/dataset/*.tmp.*
+
 # OS generated files
 .DS_Store
 Thumbs.db

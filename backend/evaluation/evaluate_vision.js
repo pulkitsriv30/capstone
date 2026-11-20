@@ -118,18 +118,27 @@ async function runEvaluation() {
       const startMs = Date.now();
 
       let visionResult;
+      // 60-second timeout per image — skips if Gemini is unresponsive
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Gemini timeout after 60s')), 60000)
+      );
+
       if (item.mode === 'environment') {
-        // Environment description — copy the file so the service doesn't delete it
         const tempPath = imagePath + '.tmp.jpg';
         fs.copyFileSync(imagePath, tempPath);
         fakeFile.path = tempPath;
-        visionResult = await visionService.describeEnvironment(fakeFile);
+        visionResult = await Promise.race([
+          visionService.describeEnvironment(fakeFile),
+          timeoutPromise
+        ]);
       } else {
-        // Object search
         const tempPath = imagePath + '.tmp.jpg';
         fs.copyFileSync(imagePath, tempPath);
         fakeFile.path = tempPath;
-        visionResult = await visionService.analyzeImage(fakeFile, item.userQuery);
+        visionResult = await Promise.race([
+          visionService.analyzeImage(fakeFile, item.userQuery),
+          timeoutPromise
+        ]);
       }
 
       const latencyMs = Date.now() - startMs;
@@ -185,7 +194,7 @@ async function runEvaluation() {
     results.push(result);
 
     // Brief pause between requests to avoid rate limiting
-    await new Promise(r => setTimeout(r, 1500));
+    await new Promise(r => setTimeout(r, 500));
   }
 
   // ── Summary Stats ─────────────────────────────────────────────

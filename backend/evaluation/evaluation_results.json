@@ -1,0 +1,1286 @@
+{
+  "runAt": "2026-11-20T17:04:59.393Z",
+  "totalImages": 30,
+  "completed": 27,
+  "skipped": 0,
+  "failed": 3,
+  "avgLatencyMs": 18968,
+  "schemaValidRate": "27/27",
+  "metricDistanceViolations": 0,
+  "objectSearchFoundAccuracy": 0.83,
+  "results": [
+    {
+      "id": "img_001",
+      "filename": "indoor_office_clear_01.jpg",
+      "category": "indoor_clear",
+      "mode": "environment",
+      "status": "ERROR: Gemini timeout after 60s",
+      "latencyMs": null
+    },
+    {
+      "id": "img_002",
+      "filename": "indoor_office_clear_02.jpg",
+      "category": "indoor_clear",
+      "mode": "environment",
+      "status": "ERROR: Gemini timeout after 60s",
+      "latencyMs": null
+    },
+    {
+      "id": "img_003",
+      "filename": "indoor_kitchen_clear_01.jpg",
+      "category": "indoor_clear",
+      "mode": "environment",
+      "status": "ERROR: Gemini timeout after 60s",
+      "latencyMs": null
+    },
+    {
+      "id": "img_004",
+      "filename": "indoor_corridor_clear_01.jpg",
+      "category": "indoor_clear",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 48492,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are facing a long hallway straight ahead, passing through a pair of double doors opened wide to your left and right. The floor directly ahead appears clear and flat. An illuminated green exit sign is located overhead to your upper left.",
+      "wordCount": 42,
+      "objectRecall": {
+        "matched": [
+          "door"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": [
+          "appears"
+        ]
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "hallway corridor",
+        "confidence": 0.95,
+        "description": "You are facing a long hallway straight ahead, passing through a pair of double doors opened wide to your left and right. The floor directly ahead appears clear and flat. An illuminated green exit sign is located overhead to your upper left."
+      }
+    },
+    {
+      "id": "img_005",
+      "filename": "indoor_bedroom_clear_01.jpg",
+      "category": "indoor_clear",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 27565,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "Directly ahead and extending to your right is a large bed sitting on an area rug over a wooden floor. To your left along the wall is a set of tall wardrobes with glass doors, and a doorway or window is on your far left.",
+      "wordCount": 45,
+      "objectRecall": {
+        "matched": [
+          "bed",
+          "wardrobe"
+        ],
+        "matchCount": 2,
+        "totalGroundTruth": 3,
+        "recall": 0.67
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "bedroom",
+        "confidence": 0.95,
+        "description": "Directly ahead and extending to your right is a large bed sitting on an area rug over a wooden floor. To your left along the wall is a set of tall wardrobes with glass doors, and a doorway or window is on your far left."
+      }
+    },
+    {
+      "id": "img_006",
+      "filename": "indoor_cluttered_01.jpg",
+      "category": "indoor_cluttered",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 24588,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "The space directly ahead, to your left, and to your right is extremely cluttered with dense piles of boxes, papers, and tools, presenting severe tripping hazards with no clear walking path. To your right, there appears to be a tool handle standing vertically amidst stacked boxes. Please exercise extreme caution as obstacles cover almost every surface around you.",
+      "wordCount": 58,
+      "objectRecall": {
+        "matched": [
+          "boxes"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 4,
+        "recall": 0.25
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "boxes"
+        ],
+        "hazardKeywordsMissed": [
+          "floor",
+          "strap"
+        ],
+        "recall": 0.33
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": [
+          "appears"
+        ]
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "close",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "The space directly ahead, to your left, and to your right is extremely cluttered with dense piles of boxes, papers, and tools, presenting severe tripping hazards with no clear walking path. To your right, there appears to be a tool handle standing vertically amidst stacked boxes. Please exercise extreme caution as obstacles cover almost every surface around you."
+      }
+    },
+    {
+      "id": "img_007",
+      "filename": "indoor_cluttered_02.jpg",
+      "category": "indoor_cluttered",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 33750,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are facing a cluttered office cubicle with a black office chair directly ahead. Be cautious of tripping hazards on the floor, including boxes around the chair base and stacks of items near your feet to the right. A desk heavily piled with papers is to your left, and a tall shelf is to your right.",
+      "wordCount": 56,
+      "objectRecall": {
+        "matched": [
+          "desk",
+          "chair"
+        ],
+        "matchCount": 2,
+        "totalGroundTruth": 4,
+        "recall": 0.5
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "floor"
+        ],
+        "hazardKeywordsMissed": [
+          "cable"
+        ],
+        "recall": 0.5
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "office cubicle",
+        "confidence": 0.95,
+        "description": "You are facing a cluttered office cubicle with a black office chair directly ahead. Be cautious of tripping hazards on the floor, including boxes around the chair base and stacks of items near your feet to the right. A desk heavily piled with papers is to your left, and a tall shelf is to your right."
+      }
+    },
+    {
+      "id": "img_008",
+      "filename": "indoor_cluttered_03.jpg",
+      "category": "indoor_cluttered",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 23859,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are in a very cluttered room densely packed with musical instruments and electronics, leaving limited walking space. Directly ahead and on the floor are several electronic keyboards and string instruments creating immediate tripping hazards. Shelves stacked with old stereos line your left side, while large instruments like a cello and zithers lean to your right.",
+      "wordCount": 56,
+      "objectRecall": {
+        "matched": [
+          "shelves"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "stacked"
+        ],
+        "hazardKeywordsMissed": [
+          "items",
+          "blocking",
+          "path"
+        ],
+        "recall": 0.25
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "cluttered room",
+        "confidence": 0.95,
+        "description": "You are in a very cluttered room densely packed with musical instruments and electronics, leaving limited walking space. Directly ahead and on the floor are several electronic keyboards and string instruments creating immediate tripping hazards. Shelves stacked with old stereos line your left side, while large instruments like a cello and zithers lean to your right."
+      }
+    },
+    {
+      "id": "img_009",
+      "filename": "outdoor_footpath_01.jpg",
+      "category": "outdoor_open",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 15370,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "There is a low stone curb running along your left, separating a grassy lawn from a paved walkway ahead and to your right. Be cautious of this raised stone edge beside you to avoid tripping. The main paved sidewalk extending ahead appears clear.",
+      "wordCount": 43,
+      "objectRecall": {
+        "matched": [],
+        "matchCount": 0,
+        "totalGroundTruth": 3,
+        "recall": 0
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "curb"
+        ],
+        "hazardKeywordsMissed": [],
+        "recall": 1
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": [
+          "appears"
+        ]
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "close",
+        "location": "outdoor path",
+        "confidence": 0.95,
+        "description": "There is a low stone curb running along your left, separating a grassy lawn from a paved walkway ahead and to your right. Be cautious of this raised stone edge beside you to avoid tripping. The main paved sidewalk extending ahead appears clear."
+      }
+    },
+    {
+      "id": "img_010",
+      "filename": "outdoor_parking_01.jpg",
+      "category": "outdoor_open",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 16482,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are in an outdoor parking lot with a wet ground surface. Several parked cars are located ahead of you and to your right, so please be cautious of potential vehicle movement in the area. Retail store entrances appear straight ahead in the background.",
+      "wordCount": 44,
+      "objectRecall": {
+        "matched": [
+          "cars"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "parked"
+        ],
+        "hazardKeywordsMissed": [
+          "blocking",
+          "path"
+        ],
+        "recall": 0.33
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "You are in an outdoor parking lot with a wet ground surface. Several parked cars are located ahead of you and to your right, so please be cautious of potential vehicle movement in the area. Retail store entrances appear straight ahead in the background."
+      }
+    },
+    {
+      "id": "img_011",
+      "filename": "outdoor_courtyard_01.jpg",
+      "category": "outdoor_open",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 14698,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are outdoors on a cobblestone ground that may be uneven underfoot. Directly ahead is a large open wooden doorway leading into an inner courtyard. To your left, there is a line of low potted plants along a building wall.",
+      "wordCount": 40,
+      "objectRecall": {
+        "matched": [],
+        "matchCount": 0,
+        "totalGroundTruth": 3,
+        "recall": 0
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": [
+          "may be"
+        ]
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "You are outdoors on a cobblestone ground that may be uneven underfoot. Directly ahead is a large open wooden doorway leading into an inner courtyard. To your left, there is a line of low potted plants along a building wall."
+      }
+    },
+    {
+      "id": "img_012",
+      "filename": "outdoor_entrance_01.jpg",
+      "category": "outdoor_open",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 15047,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "To your right, there is a set of white marble stairs leading upward with a handrail, and a red fire extinguisher sits on the ground near the bottom step. Slightly to your left, an arched green wooden door is set into the wall. Please be cautious of the staircase step if moving to your right.",
+      "wordCount": 55,
+      "objectRecall": {
+        "matched": [
+          "door"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 4,
+        "recall": 0.25
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [],
+        "hazardKeywordsMissed": [
+          "steps",
+          "entrance"
+        ],
+        "recall": 0
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "To your right, there is a set of white marble stairs leading upward with a handrail, and a red fire extinguisher sits on the ground near the bottom step. Slightly to your left, an arched green wooden door is set into the wall. Please be cautious of the staircase step if moving to your right."
+      }
+    },
+    {
+      "id": "img_013",
+      "filename": "outdoor_street_busy_01.jpg",
+      "category": "outdoor_busy",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 27052,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are on a wide sidewalk facing a large crowd of pedestrians walking across your path directly ahead and around you. Just beyond the foot traffic is a busy street with moving cars and buses to your left, and a traffic light pole to your right. Use caution as you navigate through the moving crowd near the roadway.",
+      "wordCount": 58,
+      "objectRecall": {
+        "matched": [
+          "pedestrians",
+          "road",
+          "traffic light"
+        ],
+        "matchCount": 3,
+        "totalGroundTruth": 4,
+        "recall": 0.75
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "moving",
+          "street"
+        ],
+        "hazardKeywordsMissed": [
+          "vehicles",
+          "crossing"
+        ],
+        "recall": 0.5
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "You are on a wide sidewalk facing a large crowd of pedestrians walking across your path directly ahead and around you. Just beyond the foot traffic is a busy street with moving cars and buses to your left, and a traffic light pole to your right. Use caution as you navigate through the moving crowd near the roadway."
+      }
+    },
+    {
+      "id": "img_014",
+      "filename": "outdoor_crowded_walkway_01.jpg",
+      "category": "outdoor_busy",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 21463,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.9,
+      "description": "You are in a very crowded outdoor area with heavy pedestrian traffic moving rapidly all around you on a crosswalk. One person is standing stationary slightly to your right amidst the crowd. Please proceed with caution due to the busy crowd moving through your immediate path.",
+      "wordCount": 46,
+      "objectRecall": {
+        "matched": [],
+        "matchCount": 0,
+        "totalGroundTruth": 3,
+        "recall": 0
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "crowded"
+        ],
+        "hazardKeywordsMissed": [
+          "walkway"
+        ],
+        "recall": 0.5
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "crowded street crosswalk",
+        "confidence": 0.9,
+        "description": "You are in a very crowded outdoor area with heavy pedestrian traffic moving rapidly all around you on a crosswalk. One person is standing stationary slightly to your right amidst the crowd. Please proceed with caution due to the busy crowd moving through your immediate path."
+      }
+    },
+    {
+      "id": "img_015",
+      "filename": "outdoor_crowded_lobby_01.jpg",
+      "category": "outdoor_busy",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 15753,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are in an indoor reception area with a wooden check-in counter directly ahead extending to your right. A man is standing directly ahead leaning on the desk, talking to a receptionist seated behind it to your right. To your far left, there is a clear walkway toward glass doors and natural light.",
+      "wordCount": 53,
+      "objectRecall": {
+        "matched": [],
+        "matchCount": 0,
+        "totalGroundTruth": 3,
+        "recall": 0
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "You are in an indoor reception area with a wooden check-in counter directly ahead extending to your right. A man is standing directly ahead leaning on the desk, talking to a receptionist seated behind it to your right. To your far left, there is a clear walkway toward glass doors and natural light."
+      }
+    },
+    {
+      "id": "img_016",
+      "filename": "hazard_stairs_up_01.jpg",
+      "category": "hazard_elevation",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 16411,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "A set of stairs extends diagonally across your field of view, ascending towards your upper left. Exercise caution as step edges are present directly ahead. No handrails are visible in this view.",
+      "wordCount": 32,
+      "objectRecall": {
+        "matched": [
+          "handrail"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "stairs"
+        ],
+        "hazardKeywordsMissed": [
+          "going"
+        ],
+        "recall": 0.5
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "stairs",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "close",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "A set of stairs extends diagonally across your field of view, ascending towards your upper left. Exercise caution as step edges are present directly ahead. No handrails are visible in this view."
+      }
+    },
+    {
+      "id": "img_017",
+      "filename": "hazard_stairs_down_01.jpg",
+      "category": "hazard_elevation",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 49443,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "You are on a stairwell landing with carpeted stairs leading upward directly ahead and another flight descending to your left. A wooden banister stands directly in front of you between the stairways. A red chair is visible on the upper landing further ahead.",
+      "wordCount": 43,
+      "objectRecall": {
+        "matched": [],
+        "matchCount": 0,
+        "totalGroundTruth": 3,
+        "recall": 0
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "stairs"
+        ],
+        "hazardKeywordsMissed": [
+          "going",
+          "down",
+          "high",
+          "fall",
+          "risk"
+        ],
+        "recall": 0.17
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "stairwell landing",
+        "confidence": 0.95,
+        "description": "You are on a stairwell landing with carpeted stairs leading upward directly ahead and another flight descending to your left. A wooden banister stands directly in front of you between the stairways. A red chair is visible on the upper landing further ahead."
+      }
+    },
+    {
+      "id": "img_018",
+      "filename": "hazard_curb_01.jpg",
+      "category": "hazard_elevation",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 38993,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "A low stone curb and raised grassy lawn run along your left. Directly ahead and to your right is a clear paved walkway. Mind your footing on the left edge due to the low stone border separating the grass from the path.",
+      "wordCount": 42,
+      "objectRecall": {
+        "matched": [
+          "curb"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "curb",
+          "directly",
+          "ahead"
+        ],
+        "hazardKeywordsMissed": [
+          "drop-off"
+        ],
+        "recall": 0.75
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "A low stone curb and raised grassy lawn run along your left. Directly ahead and to your right is a clear paved walkway. Mind your footing on the left edge due to the low stone border separating the grass from the path."
+      }
+    },
+    {
+      "id": "img_019",
+      "filename": "hazard_cable_floor_01.jpg",
+      "category": "hazard_elevation",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 13916,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "An office chair and wooden desk are directly ahead in front of large windows. A long dark surface is to your left, and a small round table is to your right.",
+      "wordCount": 31,
+      "objectRecall": {
+        "matched": [
+          "desk"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [],
+        "hazardKeywordsMissed": [
+          "cable",
+          "running",
+          "across",
+          "floor",
+          "trip",
+          "hazard"
+        ],
+        "recall": 0
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "office space",
+        "confidence": 0.95,
+        "description": "An office chair and wooden desk are directly ahead in front of large windows. A long dark surface is to your left, and a small round table is to your right."
+      }
+    },
+    {
+      "id": "img_020",
+      "filename": "hazard_wet_floor_01.jpg",
+      "category": "hazard_elevation",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 7064,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "Directly ahead of you on the tiled floor is a yellow wet floor caution cone, indicating a potentially slippery surface. Behind the sign are several tall bar stools with people seated, and a pink chair is located to your right.",
+      "wordCount": 40,
+      "objectRecall": {
+        "matched": [
+          "floor"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 2,
+        "recall": 0.5
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "floor",
+          "slip"
+        ],
+        "hazardKeywordsMissed": [
+          "hazard"
+        ],
+        "recall": 0.67
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "close",
+        "location": "immediate surroundings",
+        "confidence": 0.95,
+        "description": "Directly ahead of you on the tiled floor is a yellow wet floor caution cone, indicating a potentially slippery surface. Behind the sign are several tall bar stools with people seated, and a pink chair is located to your right."
+      }
+    },
+    {
+      "id": "img_021",
+      "filename": "lowlight_dim_corridor_01.jpg",
+      "category": "low_light",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 16482,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.9,
+      "description": "You are facing a long, dark hallway directly ahead. Overhead lights illuminate the center of the corridor leading toward a closed door at the end.",
+      "wordCount": 25,
+      "objectRecall": {
+        "matched": [
+          "corridor",
+          "door"
+        ],
+        "matchCount": 2,
+        "totalGroundTruth": 2,
+        "recall": 1
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "indoor hallway",
+        "confidence": 0.9,
+        "description": "You are facing a long, dark hallway directly ahead. Overhead lights illuminate the center of the corridor leading toward a closed door at the end."
+      }
+    },
+    {
+      "id": "img_022",
+      "filename": "lowlight_backlit_window_01.jpg",
+      "category": "low_light",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 3028,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.9,
+      "description": "A table with chairs is located directly ahead of you. A large window with warm, glowing curtains is centered behind the table.",
+      "wordCount": 22,
+      "objectRecall": {
+        "matched": [
+          "window"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 2,
+        "recall": 0.5
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "indoor room",
+        "confidence": 0.9,
+        "description": "A table with chairs is located directly ahead of you. A large window with warm, glowing curtains is centered behind the table."
+      }
+    },
+    {
+      "id": "img_023",
+      "filename": "lowlight_dark_room_lamp_01.jpg",
+      "category": "low_light",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 7583,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "There is a floor lamp with an orange cylindrical shade standing to your right against a background of draped curtains. No immediate hazards or people are visible in the surrounding space.",
+      "wordCount": 31,
+      "objectRecall": {
+        "matched": [
+          "lamp"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "right",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "indoor room",
+        "confidence": 0.95,
+        "description": "There is a floor lamp with an orange cylindrical shade standing to your right against a background of draped curtains. No immediate hazards or people are visible in the surrounding space."
+      }
+    },
+    {
+      "id": "img_024",
+      "filename": "lowlight_night_outdoor_01.jpg",
+      "category": "low_light",
+      "mode": "environment",
+      "status": "OK",
+      "latencyMs": 10540,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.9,
+      "description": "The image is very dark, showing a paved pathway or road ahead lit dimly by an overhead light filtering through trees. Trees line both sides of the path, and visibility is severely limited due to darkness.",
+      "wordCount": 36,
+      "objectRecall": {
+        "matched": [
+          "road"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": true,
+        "hazardKeywordsFound": [
+          "limited",
+          "visibility"
+        ],
+        "hazardKeywordsMissed": [],
+        "recall": 1
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": null,
+      "raw": {
+        "found": true,
+        "target": "environment",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "outdoor path at night",
+        "confidence": 0.9,
+        "description": "The image is very dark, showing a paved pathway or road ahead lit dimly by an overhead light filtering through trees. Trees line both sides of the path, and visibility is severely limited due to darkness."
+      }
+    },
+    {
+      "id": "img_025",
+      "filename": "object_search_bottle_visible_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 9995,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.98,
+      "description": "Your water bottle is right in the center of the frame, standing on a surface in front of you.",
+      "wordCount": 19,
+      "objectRecall": {
+        "matched": [
+          "water bottle"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": true,
+      "raw": {
+        "found": true,
+        "target": "water bottle",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "near",
+        "location": "standing upright in the middle of a dark surface in front of a window",
+        "confidence": 0.98,
+        "description": "Your water bottle is right in the center of the frame, standing on a surface in front of you."
+      }
+    },
+    {
+      "id": "img_026",
+      "filename": "object_search_bottle_hidden_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 12298,
+      "schemaValid": true,
+      "geminiFound": false,
+      "geminiConfidence": 0,
+      "description": "I can't see your water bottle here. Try panning the camera to the right to check the rest of the desk surface.",
+      "wordCount": 22,
+      "objectRecall": {
+        "matched": [
+          "desk"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": true,
+      "raw": {
+        "found": false,
+        "target": "water bottle",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "not visible",
+        "confidence": 0,
+        "description": "I can't see your water bottle here. Try panning the camera to the right to check the rest of the desk surface."
+      }
+    },
+    {
+      "id": "img_027",
+      "filename": "object_search_bag_visible_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 10067,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "Your black bag is on the wooden table, right in front of the blue sofa.",
+      "wordCount": 15,
+      "objectRecall": {
+        "matched": [
+          "bag",
+          "sofa"
+        ],
+        "matchCount": 2,
+        "totalGroundTruth": 3,
+        "recall": 0.67
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": true,
+      "raw": {
+        "found": true,
+        "target": "bag",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "medium",
+        "location": "on the wooden dining table in front of the blue sofa",
+        "confidence": 0.95,
+        "description": "Your black bag is on the wooden table, right in front of the blue sofa."
+      }
+    },
+    {
+      "id": "img_028",
+      "filename": "object_search_chair_visible_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 10409,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.95,
+      "description": "There is a dining chair at the front of the dining table directly in front of you.",
+      "wordCount": 17,
+      "objectRecall": {
+        "matched": [
+          "chair",
+          "table"
+        ],
+        "matchCount": 2,
+        "totalGroundTruth": 3,
+        "recall": 0.67
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": true,
+      "raw": {
+        "found": true,
+        "target": "chair",
+        "position": {
+          "horizontal": "center",
+          "vertical": "bottom"
+        },
+        "distance_category": "medium",
+        "location": "dining table in the center of the room",
+        "confidence": 0.95,
+        "description": "There is a dining chair at the front of the dining table directly in front of you."
+      }
+    },
+    {
+      "id": "img_029",
+      "filename": "object_search_spectacles_partial_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 17993,
+      "schemaValid": true,
+      "geminiFound": true,
+      "geminiConfidence": 0.98,
+      "description": "Your spectacles are right in front of you, resting on an open book.",
+      "wordCount": 13,
+      "objectRecall": {
+        "matched": [
+          "spectacles"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": true,
+      "raw": {
+        "found": true,
+        "target": "spectacles",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "near",
+        "location": "resting on an open book",
+        "confidence": 0.98,
+        "description": "Your spectacles are right in front of you, resting on an open book."
+      }
+    },
+    {
+      "id": "img_030",
+      "filename": "object_search_phone_visible_01.jpg",
+      "category": "object_search",
+      "mode": "object_search",
+      "status": "OK",
+      "latencyMs": 3785,
+      "schemaValid": true,
+      "geminiFound": false,
+      "geminiConfidence": 0.1,
+      "description": "I cannot see your phone in this view. Try panning the camera toward the bedside table or around the bed area.",
+      "wordCount": 21,
+      "objectRecall": {
+        "matched": [
+          "phone"
+        ],
+        "matchCount": 1,
+        "totalGroundTruth": 3,
+        "recall": 0.33
+      },
+      "hazardRecall": {
+        "applicable": false
+      },
+      "epistemicHonesty": {
+        "hedgeWordsUsed": []
+      },
+      "hallucination_flag": null,
+      "metric_distance_claimed": false,
+      "foundMatchedExpectation": false,
+      "raw": {
+        "found": false,
+        "target": "phone",
+        "position": {
+          "horizontal": "center",
+          "vertical": "center"
+        },
+        "distance_category": "unknown",
+        "location": "not visible in the frame",
+        "confidence": 0.1,
+        "description": "I cannot see your phone in this view. Try panning the camera toward the bedside table or around the bed area."
+      }
+    }
+  ]
+}

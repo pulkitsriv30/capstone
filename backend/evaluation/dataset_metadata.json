@@ -1,0 +1,308 @@
+[
+  {
+    "id": "img_001",
+    "filename": "indoor_office_clear_01.jpg",
+    "category": "indoor_clear",
+    "groundTruthObjects": ["desk", "laptop", "monitor", "office chair", "keyboard"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Well-lit office workspace, clear floor path"
+  },
+  {
+    "id": "img_002",
+    "filename": "indoor_office_clear_02.jpg",
+    "category": "indoor_clear",
+    "groundTruthObjects": ["bookshelf", "table", "lamp", "sofa"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Living room, good lighting, unobstructed floor"
+  },
+  {
+    "id": "img_003",
+    "filename": "indoor_kitchen_clear_01.jpg",
+    "category": "indoor_clear",
+    "groundTruthObjects": ["kitchen counter", "refrigerator", "microwave", "sink"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Kitchen with clear floor space"
+  },
+  {
+    "id": "img_004",
+    "filename": "indoor_corridor_clear_01.jpg",
+    "category": "indoor_clear",
+    "groundTruthObjects": ["door", "wall", "light switch"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Empty hallway, door visible at end"
+  },
+  {
+    "id": "img_005",
+    "filename": "indoor_bedroom_clear_01.jpg",
+    "category": "indoor_clear",
+    "groundTruthObjects": ["bed", "wardrobe", "nightstand"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Bedroom with open floor space"
+  },
+  {
+    "id": "img_006",
+    "filename": "indoor_cluttered_01.jpg",
+    "category": "indoor_cluttered",
+    "groundTruthObjects": ["boxes", "bags", "chair", "table"],
+    "groundTruthHazards": ["boxes on floor", "bag strap on floor"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Cluttered room, objects on the floor creating trip hazards"
+  },
+  {
+    "id": "img_007",
+    "filename": "indoor_cluttered_02.jpg",
+    "category": "indoor_cluttered",
+    "groundTruthObjects": ["books", "cables", "desk", "chair"],
+    "groundTruthHazards": ["cable on floor"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Desk area with cable running across floor"
+  },
+  {
+    "id": "img_008",
+    "filename": "indoor_cluttered_03.jpg",
+    "category": "indoor_cluttered",
+    "groundTruthObjects": ["stacked boxes", "laundry basket", "shelves"],
+    "groundTruthHazards": ["stacked items blocking path"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Storage room with partially blocked corridor"
+  },
+  {
+    "id": "img_009",
+    "filename": "outdoor_footpath_01.jpg",
+    "category": "outdoor_open",
+    "groundTruthObjects": ["footpath", "trees", "road"],
+    "groundTruthHazards": ["curb"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Outdoor footpath, curb visible at edge"
+  },
+  {
+    "id": "img_010",
+    "filename": "outdoor_parking_01.jpg",
+    "category": "outdoor_open",
+    "groundTruthObjects": ["cars", "parking markings", "building entrance"],
+    "groundTruthHazards": ["parked car blocking path"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Parking lot with vehicles"
+  },
+  {
+    "id": "img_011",
+    "filename": "outdoor_courtyard_01.jpg",
+    "category": "outdoor_open",
+    "groundTruthObjects": ["benches", "trees", "paved area"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Open courtyard, relatively clear"
+  },
+  {
+    "id": "img_012",
+    "filename": "outdoor_entrance_01.jpg",
+    "category": "outdoor_open",
+    "groundTruthObjects": ["building entrance", "steps", "door", "railing"],
+    "groundTruthHazards": ["steps at entrance"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Building entrance with steps"
+  },
+  {
+    "id": "img_013",
+    "filename": "outdoor_street_busy_01.jpg",
+    "category": "outdoor_busy",
+    "groundTruthObjects": ["pedestrians", "road", "vehicles", "traffic light"],
+    "groundTruthHazards": ["moving vehicles", "street crossing"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Busy street crossing, vehicles moving"
+  },
+  {
+    "id": "img_014",
+    "filename": "outdoor_crowded_walkway_01.jpg",
+    "category": "outdoor_busy",
+    "groundTruthObjects": ["pedestrians", "market stalls", "pathway"],
+    "groundTruthHazards": ["crowded walkway"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Crowded marketplace walkway"
+  },
+  {
+    "id": "img_015",
+    "filename": "outdoor_crowded_lobby_01.jpg",
+    "category": "outdoor_busy",
+    "groundTruthObjects": ["people", "reception desk", "elevator doors"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Busy building lobby with people moving"
+  },
+  {
+    "id": "img_016",
+    "filename": "hazard_stairs_up_01.jpg",
+    "category": "hazard_elevation",
+    "groundTruthObjects": ["staircase", "handrail", "steps"],
+    "groundTruthHazards": ["stairs going up"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Staircase ascending, railing on right"
+  },
+  {
+    "id": "img_017",
+    "filename": "hazard_stairs_down_01.jpg",
+    "category": "hazard_elevation",
+    "groundTruthObjects": ["staircase", "handrail", "steps"],
+    "groundTruthHazards": ["stairs going down — high fall risk"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Stairs descending, critical hazard"
+  },
+  {
+    "id": "img_018",
+    "filename": "hazard_curb_01.jpg",
+    "category": "hazard_elevation",
+    "groundTruthObjects": ["footpath", "road", "curb"],
+    "groundTruthHazards": ["curb drop-off directly ahead"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Curb at footpath edge, road below"
+  },
+  {
+    "id": "img_019",
+    "filename": "hazard_cable_floor_01.jpg",
+    "category": "hazard_elevation",
+    "groundTruthObjects": ["floor", "desk", "power cable"],
+    "groundTruthHazards": ["cable running across floor — trip hazard"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Extension cord across walking path"
+  },
+  {
+    "id": "img_020",
+    "filename": "hazard_wet_floor_01.jpg",
+    "category": "hazard_elevation",
+    "groundTruthObjects": ["floor", "wet floor sign"],
+    "groundTruthHazards": ["wet floor — slip hazard"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Wet floor warning sign visible"
+  },
+  {
+    "id": "img_021",
+    "filename": "lowlight_dim_corridor_01.jpg",
+    "category": "low_light",
+    "groundTruthObjects": ["corridor", "door"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Dimly lit corridor, low visibility"
+  },
+  {
+    "id": "img_022",
+    "filename": "lowlight_backlit_window_01.jpg",
+    "category": "low_light",
+    "groundTruthObjects": ["window", "silhouette of furniture"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Strong backlight from window, objects in silhouette"
+  },
+  {
+    "id": "img_023",
+    "filename": "lowlight_dark_room_lamp_01.jpg",
+    "category": "low_light",
+    "groundTruthObjects": ["lamp", "table", "chair"],
+    "groundTruthHazards": [],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Dark room with single lamp illuminating partial scene"
+  },
+  {
+    "id": "img_024",
+    "filename": "lowlight_night_outdoor_01.jpg",
+    "category": "low_light",
+    "groundTruthObjects": ["streetlight", "road", "footpath"],
+    "groundTruthHazards": ["limited visibility"],
+    "userQuery": null,
+    "mode": "environment",
+    "notes": "Night outdoor scene, streetlight only"
+  },
+  {
+    "id": "img_025",
+    "filename": "object_search_bottle_visible_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["water bottle", "desk", "laptop"],
+    "groundTruthHazards": [],
+    "userQuery": "Find my water bottle",
+    "mode": "object_search",
+    "expectedFound": true,
+    "notes": "Water bottle clearly visible on desk, right side of frame"
+  },
+  {
+    "id": "img_026",
+    "filename": "object_search_bottle_hidden_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["desk", "books", "pen holder"],
+    "groundTruthHazards": [],
+    "userQuery": "Find my water bottle",
+    "mode": "object_search",
+    "expectedFound": false,
+    "notes": "Water bottle NOT present in frame — should return found: false"
+  },
+  {
+    "id": "img_027",
+    "filename": "object_search_bag_visible_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["bag", "sofa", "coffee table"],
+    "groundTruthHazards": [],
+    "userQuery": "Where is my bag",
+    "mode": "object_search",
+    "expectedFound": true,
+    "notes": "Bag clearly on sofa to the left"
+  },
+  {
+    "id": "img_028",
+    "filename": "object_search_chair_visible_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["chair", "table", "floor"],
+    "groundTruthHazards": [],
+    "userQuery": "Find the chair",
+    "mode": "object_search",
+    "expectedFound": true,
+    "notes": "Dining chair visible in center of frame"
+  },
+  {
+    "id": "img_029",
+    "filename": "object_search_spectacles_partial_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["spectacles", "newspaper", "table"],
+    "groundTruthHazards": [],
+    "userQuery": "Find my spectacles",
+    "mode": "object_search",
+    "expectedFound": true,
+    "notes": "Spectacles partially under newspaper — tests partial visibility handling"
+  },
+  {
+    "id": "img_030",
+    "filename": "object_search_phone_visible_01.jpg",
+    "category": "object_search",
+    "groundTruthObjects": ["phone", "charger", "nightstand"],
+    "groundTruthHazards": [],
+    "userQuery": "Where is my phone",
+    "mode": "object_search",
+    "expectedFound": true,
+    "notes": "Phone on nightstand, right of frame, clearly visible"
+  }
+]

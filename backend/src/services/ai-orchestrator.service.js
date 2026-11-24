@@ -42,8 +42,8 @@ class AIOrchestratorService {
 
   async processEnvironmentDescription(imageFile) {
     try {
-      // Step 1: Vision Analysis (with automatic model fallback)
-      const visionResult = await visionService.analyzeImage(imageFile, "Describe the immediate environment and any obstacles.");
+      // Step 1: Environment description using the dedicated safety-first prompt
+      const visionResult = await visionService.describeEnvironment(imageFile);
       
       // Step 2: Navigation Decision (Environment)
       const decision = navigationService.describeEnvironment(visionResult);

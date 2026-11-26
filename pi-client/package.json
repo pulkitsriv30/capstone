@@ -1,0 +1,18 @@
+{
+  "name": "ai-assistive-navigation-pi-client",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Raspberry Pi 4 & Laptop Webcam Simulation hardware controller for AI-Based Smart Navigation System",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "simulate": "node src/index.js --mode=webcam",
+    "mock": "node src/index.js --mode=mock",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "sharp": "^0.33.5"
+  }
+}

@@ -1,21 +1,20 @@
 const elevenlabsService = require('../services/elevenlabs.service');
 const logger = require('../utils/logger');
+const response = require('../utils/response');
 
 const transcribe = async (req, res, next) => {
   try {
     if (!req.file) {
-      return res.status(400).json({ success: false, message: 'Audio file is required' });
+      return response.error(res, 'Audio file is required', 400);
     }
 
     const text = await elevenlabsService.transcribeAudio(req.file);
-    
-    res.json({
-      success: true,
-      text: text
+
+    return response.success(res, {
+      text,
     });
   } catch (error) {
     logger.error('Transcribe Error', { error: error.message });
-    // Delegate to centralized error handler
     next(error);
   }
 };
@@ -23,14 +22,20 @@ const transcribe = async (req, res, next) => {
 const speak = async (req, res, next) => {
   try {
     const { text } = req.body;
-    if (!text) {
-      return res.status(400).json({ success: false, message: 'Text is required' });
+    if (!text || typeof text !== 'string' || !text.trim()) {
+      return response.error(res, 'Text is required', 400);
     }
 
-    const audioBuffer = await elevenlabsService.generateSpeech(text);
-    
-    res.set('Content-Type', 'audio/mpeg');
-    res.send(audioBuffer);
+    if (text.length > 5000) {
+      return response.error(res, 'Text must not exceed 5000 characters', 400);
+    }
+
+    const cleanText = text.trim();
+    const audioBuffer = await elevenlabsService.generateSpeech(cleanText);
+
+    return response.audio(res, audioBuffer, {
+      'X-Response-Text': encodeURIComponent(cleanText),
+    });
   } catch (error) {
     logger.error('Speak Error', { error: error.message });
     next(error);
@@ -39,5 +44,5 @@ const speak = async (req, res, next) => {
 
 module.exports = {
   transcribe,
-  speak
+  speak,
 };

@@ -37,6 +37,13 @@ class AIOrchestratorService {
     } catch (error) {
       logger.error('Orchestrator Error (Navigation)', { error: error.message });
       throw error;
+    } finally {
+      if (audioFile && audioFile.path && fs.existsSync(audioFile.path)) {
+        try { fs.unlinkSync(audioFile.path); } catch (_) {}
+      }
+      if (imageFile && imageFile.path && fs.existsSync(imageFile.path)) {
+        try { fs.unlinkSync(imageFile.path); } catch (_) {}
+      }
     }
   }
 
@@ -66,9 +73,9 @@ class AIOrchestratorService {
       logger.error('Orchestrator Error (Environment)', { error: error.message });
       throw error;
     } finally {
-        if (imageFile && fs.existsSync(imageFile.path)) {
-            fs.unlinkSync(imageFile.path);
-        }
+      if (imageFile && imageFile.path && fs.existsSync(imageFile.path)) {
+        try { fs.unlinkSync(imageFile.path); } catch (_) {}
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-# API Documentation & Contracts
+﻿# API Documentation & Contracts
 
 **AI-Based Smart Navigation System for Visually Impaired Individuals**  
 *Backend Service API Specification & Contract Reference*

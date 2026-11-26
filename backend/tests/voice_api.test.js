@@ -2,7 +2,16 @@ const test = require('node:test');
 const assert = require('node:assert');
 const env = require('../src/config/env');
 
-test('Voice Speak Endpoint returns audio', { skip: !env.ELEVENLABS_API_KEY ? 'ELEVENLABS_API_KEY not configured, skipping live API test' : false }, async (t) => {
+const isPlaceholderKey = (key) => {
+  if (!key) return true;
+  return key.includes('your_') || key.includes('placeholder') || key.trim() === '';
+};
+
+test('Voice Speak Endpoint returns audio', { 
+  skip: (!env.ELEVENLABS_API_KEY || isPlaceholderKey(env.ELEVENLABS_API_KEY)) 
+    ? 'ELEVENLABS_API_KEY not configured with live key, skipping live external call test' 
+    : false 
+}, async (t) => {
   const app = require('../src/server');
   
   // Since we are using native node tests, we'll start the server and test it over HTTP
